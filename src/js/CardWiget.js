@@ -98,8 +98,7 @@ export class CardWiget {
       } 
     }
 
-    //if(isValidCard(value)) {
-    if(true) {
+    if(isValidCard(value)) {
       for (const key in this.arrayCardBankName) {
         if (value.startsWith(key)) {  
           // Найдем элемент на странице и изменим классы  
