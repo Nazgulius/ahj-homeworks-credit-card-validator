@@ -5,6 +5,39 @@ export class CardWiget {
     this.parentEl = parentEl;
 
     this.onSubmit = this.onSubmit.bind(this);
+
+    this.arrayCardBankName = {
+      2200: '.mir',
+      2201: '.mir',
+      2202: '.mir',
+      2203: '.mir',
+      2204: '.mir',
+      34: '.amex',
+      37: '.amex',
+      35: '.jcb',
+      300: '.diners_club',
+      301: '.diners_club',
+      302: '.diners_club',
+      303: '.diners_club',
+      304: '.diners_club',
+      305: '.diners_club',
+      4: '.visa',
+      51: '.master',
+      52: '.master',
+      53: '.master',
+      54: '.master',
+      55: '.master',
+      65: '.discover',
+      6011: '.discover',
+      622126: '.discover',
+      622925: '.discover',
+      644: '.discover',
+      645: '.discover',
+      646: '.discover',
+      647: '.discover',
+      648: '.discover',
+      649: '.discover',
+    };
   }
 
   static get markup() {
@@ -57,20 +90,19 @@ export class CardWiget {
     const value = this.input.value;
 
     if(isValidCard(value)) {
-      if(value[0] === 4) {
-        this.element.querySelector(".visa").classList.add('valid');
-        this.element.querySelector(".visa").classList.remove('invalid');
-        console.log(visa);
-      } else {
-      
+      for (const key in this.arrayCardBankName) {
+        if (value.startsWith(key)) {  
+          // Найдем элемент на странице и изменим классы  
+          const element = document.querySelector(this.arrayCardBankName[key]);  
+          if (element) {  
+              element.classList.add('valid');  
+              element.classList.remove('invalid');  
+          } 
+           
+          break; // Выходим из цикла, поскольку соответствующий ключ найден  
+        } 
       }
-        this.input.classList.add('valid');
-        this.input.classList.remove('invalid');
-    } else {
-        
     }
   }
-
-  
   
 }
