@@ -204,3 +204,11 @@ a {
   -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
+
+.invalid {
+  filter: grayscale(100%);
+}
+
+.valid {
+  filter: none;
+}

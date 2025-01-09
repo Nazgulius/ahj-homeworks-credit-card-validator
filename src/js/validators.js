@@ -6,18 +6,21 @@ export function isValidCard(value) {
 
   if (isNumeric) {
     for (let i = 0; i < length; i++) {
-      if (i % 2 !== parity) {
-        sum += value[i];
-      } else {
-        if (value[i] > 4) {
-          sum += (2 * value[i] - 9);
-        } else {
-          sum += (2 * value[i]);
-        }
-      }
+      const digit = Number(value[i], 10); 
+      if (i % 2 !== parity) {  
+        sum += digit;  
+      } else {  
+        if (digit > 4) {  
+          sum += (2 * digit - 9);  
+        } else {  
+          sum += (2 * digit);  
+        }  
+      }  
     }
-
-    return value[length - 1] === ((10 - (sum % 10)) % 10);
+    const lastDigit = Number(value[length - 1], 10);  
+    console.log(lastDigit === ((10 - (sum % 10)) % 10)); // проверяю true или false
+    return lastDigit === ((10 - (sum % 10)) % 10);  
   }
+
   return false;
 }
