@@ -65,3 +65,67 @@ body {
 .contact-list-item-name, .contact-list-item-phone, .contact-list-item-action {
     margin-right: 1rem;
 }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.cards {
+  margin: 10px 0;
+  height: 25px;
+}
+
+.card.cards {
+  margin: 10px 0;
+  height: 25px;
+}
+
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+.cards li {
+  display: block;
+  float: left;
+}
+
+.card {
+  float: left;
+  width: 39px;
+  height: 25px;
+  text-indent: -9999px;
+  background-position: 0 0;
+  margin-right: 4px;
+}
+
+.card.cdisabled {
+  background-position: 0 -25px;
+  opacity: .3
+}
+
+.card.visa {
+  background-image: url(../img/card-visa.gif);
+}
+
+.card.master {
+  background-image: url(../img/card-mastercard.gif);
+}
+
+.card.amex {
+  background-image: url(../img/card-amex.gif);
+}
+
+.card.discover {
+  background-image: url(../img/card-discover.gif);
+}
+
+.card.jcb {
+  background-image: url(../img/card-jcb.gif);
+}
+
+.card.diners_club {
+  background-image: url(../img/card-diners.gif);
+}
