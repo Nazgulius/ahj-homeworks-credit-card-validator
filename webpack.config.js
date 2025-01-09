@@ -5,16 +5,12 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   target: 'web',
-  devtool: 'inline-source-map',
+
   output: {
     path: path.resolve(__dirname, 'dist'),
+    publicPath: "",
   },
-  devServer: {
-    historyApiFallback: true,
-    contentBase: path.resolve(__dirname, '/dist'),
-    open: true,
-    compress: true,
-  },
+  
   module: {
     rules: [
       {
@@ -37,6 +33,10 @@ module.exports = {
         use: [
           MiniCssExtractPlugin.loader, 'css-loader',
         ],
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: "asset/resource",
       },
     ],
   },
