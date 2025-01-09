@@ -18,7 +18,7 @@ export function isValidCard(value) {
       }  
     }
     const lastDigit = Number(value[length - 1], 10);  
-    console.log(lastDigit === ((10 - (sum % 10)) % 10)); // проверяю true или false
+    console.log('isValidCard: ' + lastDigit === ((10 - (sum % 10)) % 10)); // проверяю true или false
     return lastDigit === ((10 - (sum % 10)) % 10);  
   }
 

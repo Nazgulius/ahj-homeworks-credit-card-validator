@@ -89,7 +89,17 @@ export class CardWiget {
 
     const value = this.input.value;
 
-    if(isValidCard(value)) {
+    // сбрасываем все предыдущие valid
+    for (const key in this.arrayCardBankName) {
+      const element = document.querySelector(this.arrayCardBankName[key]);  
+      if (element) {  
+          element.classList.add('invalid');  
+          element.classList.remove('valid');  
+      } 
+    }
+
+    //if(isValidCard(value)) {
+    if(true) {
       for (const key in this.arrayCardBankName) {
         if (value.startsWith(key)) {  
           // Найдем элемент на странице и изменим классы  
@@ -98,7 +108,8 @@ export class CardWiget {
               element.classList.add('valid');  
               element.classList.remove('invalid');  
           } 
-           
+          console.log('value.startsWith(key): ' + value.startsWith(key)); 
+          console.log('key: ' + key + ' - ' + this.arrayCardBankName[key]); 
           break; // Выходим из цикла, поскольку соответствующий ключ найден  
         } 
       }
