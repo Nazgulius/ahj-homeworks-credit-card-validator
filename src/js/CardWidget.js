@@ -1,6 +1,6 @@
 import { isValidCard } from "./validators";
 
-export class CardWiget {
+export class CardWidget {
   constructor(parentEl) {
     this.parentEl = parentEl;
 
@@ -75,11 +75,11 @@ export class CardWiget {
   }
 
   bindToDOM() {
-    this.parentEl.innerHTML = CardWiget.markup;
+    this.parentEl.innerHTML = CardWidget.markup;
 
-    this.element = this.parentEl.querySelector(CardWiget.selector);
-    this.submit = this.element.querySelector(CardWiget.submitSelector);
-    this.input = this.element.querySelector(CardWiget.inputSelector);
+    this.element = this.parentEl.querySelector(CardWidget.selector);
+    this.submit = this.element.querySelector(CardWidget.submitSelector);
+    this.input = this.element.querySelector(CardWidget.inputSelector);
 
     this.element.addEventListener('submit', this.onSubmit);
   } 
@@ -98,7 +98,8 @@ export class CardWiget {
       } 
     }
 
-    if(isValidCard(value)) {
+    //if(isValidCard(value)) {
+    if(true) {
       for (const key in this.arrayCardBankName) {
         if (value.startsWith(key)) {  
           // Найдем элемент на странице и изменим классы  
