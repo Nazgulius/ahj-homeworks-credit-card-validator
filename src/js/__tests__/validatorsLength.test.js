@@ -1,4 +1,4 @@
-import { isValidCardLength } from "./validatorsLength";
+import { isValidCardLength } from "../validatorsLength";
 
 test('should be false if card length less then 10', () => {
   const result = isValidCardLength('');

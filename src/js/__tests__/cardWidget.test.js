@@ -105,7 +105,7 @@ test('widget should add valid class in Mir', () => {
 
     widget.bindToDOM();
 
-    widget.input.value = '2200774208071127';
+    widget.input.value = '2200000000000053';
     widget.submit.click();
 
     expect(document.querySelector('.mir').classList.contains('valid')).toEqual(true);
@@ -119,9 +119,7 @@ test('widget should add invalid class in visa', () => {
     const widget = new CardWidget(container);
 
     widget.bindToDOM();
-
     widget.submit.click();
 
     expect(document.querySelector('.visa').classList.contains('invalid')).toEqual(true);
 })
-
