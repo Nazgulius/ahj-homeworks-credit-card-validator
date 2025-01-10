@@ -1,4 +1,5 @@
 import { isValidCard } from "./validators";
+import { isValidCardLength } from "./validatorsLength";
 
 export class CardWidget {
   constructor(parentEl) {
@@ -96,9 +97,8 @@ export class CardWidget {
           element.classList.remove('valid');  
       } 
     }
-
-    //if(isValidCard(value)) {
-    if(true) {
+    
+    if(isValidCard(value) && isValidCardLength(value)) {
       for (const key in this.arrayCardBankName) {
         if (value.startsWith(key)) {  
           // Найдем элемент на странице и изменим классы  
@@ -106,9 +106,8 @@ export class CardWidget {
           if (element) {  
               element.classList.add('valid');  
               element.classList.remove('invalid');  
-          } 
-          console.log('value.startsWith(key): ' + value.startsWith(key)); 
-          console.log('key: ' + key + ' - ' + this.arrayCardBankName[key]); 
+          }
+          
           break; // Выходим из цикла, поскольку соответствующий ключ найден  
         } 
       }

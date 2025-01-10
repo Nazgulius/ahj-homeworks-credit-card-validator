@@ -1,26 +1,20 @@
 export function isValidCard(value) {
-  const isNumeric = /^\d+$/.test(value);
-  let sum = 0;
-  const length = value.length;
-  const parity = length % 2;
+  // Accept only digits, dashes or spaces
+	if (/[^0-9-\s]+/.test(value)) return false;
 
-  if (isNumeric) {
-    for (let i = 0; i < length; i++) {
-      const digit = Number(value[i], 10); 
-      if (i % 2 !== parity) {  
-        sum += digit;  
-      } else {  
-        if (digit > 4) {  
-          sum += (2 * digit - 9);  
-        } else {  
-          sum += (2 * digit);  
-        }  
-      }  
-    }
-    const lastDigit = Number(value[length - 1], 10);  
-    console.log('isValidCard: ' + lastDigit === ((10 - (sum % 10)) % 10)); // проверяю true или false
-    return lastDigit === ((10 - (sum % 10)) % 10);  
-  }
+	// The Luhn Algorithm. It's so pretty.
+	let nCheck = 0, bEven = false;
+	value = value.replace(/\D/g, "");
 
-  return false;
+	for (var n = value.length - 1; n >= 0; n--) {
+		var cDigit = value.charAt(n),
+			  nDigit = parseInt(cDigit, 10);
+
+		if (bEven && (nDigit *= 2) > 9) nDigit -= 9;
+
+		nCheck += nDigit;
+		bEven = !bEven;
+	}
+
+	return (nCheck % 10) == 0;
 }
