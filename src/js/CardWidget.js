@@ -54,8 +54,7 @@ export class CardWidget {
     </ul>
     <form id="form" class="form-inline" novalidate="novalidate">
       <div class="form-group">
-        <input class="form-control col-md-6 input" id="card_number" name="card_number" type="text"
-          placeholder="Credit card number" data-original-title="" title="">
+        <input class="form-control col-md-6 input" id="card_number" name="card_number" type="text" placeholder="Credit card number" data-original-title="" title="">
         <button data-id="innogrn-submit" class="btn btn-success submit">Click to Validate</button>
       </div>
     </form>
