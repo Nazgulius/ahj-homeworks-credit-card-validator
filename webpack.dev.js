@@ -13,6 +13,7 @@ module.exports = merge(common, {
     historyApiFallback: true,
     open: true,
     compress: true,
+    port: 8080,
   },
 
   plugins: [
