@@ -1,6 +1,6 @@
-import puppeteer from 'puppeteer';
+import puppeteer from "puppeteer";
 
-describe('Page start', () => {
+describe("Page start", () => {
   let browser;
   let page;
 
@@ -13,11 +13,11 @@ describe('Page start', () => {
 
     page = await browser.newPage();
   });
-  
-  test('page start', async () => {
-    await page.goto('http://localhost:8080/');
 
-    await page.waitFor('body');
+  test("page start", async () => {
+    await page.goto("http://localhost:8080/");
+
+    await page.waitFor("body");
   });
 
   // afterAll(async () => {
